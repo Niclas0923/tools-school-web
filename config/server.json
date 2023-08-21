@@ -1,0 +1,14 @@
+{
+  "http": {
+    "on": true,
+    "point": 18080
+  },
+  "https": {
+    "on": false,
+    "point": 443,
+    "ssl": {
+      "key": "",
+      "cert": ""
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "tools-school-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "st": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/niclas0923/tools-school-web.git"
+  },
+  "author": "Niclas0923",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  }
+}

@@ -26,6 +26,10 @@
 .cad-in{
   padding: 40px 10px;
   border-radius: 15px;
+  cursor: pointer;  /* 设置鼠标样式为手形 */
+}
+.cad-in:hover{
+  opacity: 0.95;
 }
 .cardRollCallTool{
   background-color: rgb(201,202,201);

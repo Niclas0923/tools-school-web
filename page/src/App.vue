@@ -1,6 +1,5 @@
 <script setup>
 import {onMounted} from "vue";
-import axios from "axios";
 import {useValueStore} from "./store/useValueStore.js";
 
 // 引入list来更新数据

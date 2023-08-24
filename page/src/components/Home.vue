@@ -7,18 +7,24 @@ const router = useRouter()
 </script>
 
 <template>
-  <div class="row">
-    <div class="col-6 cad">
-      <div class="cad-in text-center cardRollCallTool" @click="router.push('/rollCallTool')">
-        <h4 class="mb-0">点名工具</h4>
+  <Transition
+      appear
+      name="animate__animated animate__bounce"
+      enter-active-class="animate__bounceInUp"
+  >
+    <div class="row">
+      <div class="col-6 cad">
+        <div class="cad-in text-center cardRollCallTool" @click="router.push('/rollCallTool')">
+          <h4 class="mb-0">点名工具</h4>
+        </div>
+      </div>
+      <div class="col-6 cad">
+        <div class="cad-in text-center cardWeChatRelay" @click="router.push('/weChatRelay')">
+          <h4 class="mb-0">微信接龙</h4>
+        </div>
       </div>
     </div>
-    <div class="col-6 cad">
-      <div class="cad-in text-center cardWeChatRelay" @click="router.push('/weChatRelay')">
-        <h4 class="mb-0">微信接龙</h4>
-      </div>
-    </div>
-  </div>
+  </Transition>
 </template>
 
 <style scoped>

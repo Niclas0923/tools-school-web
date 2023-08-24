@@ -17,7 +17,7 @@ onMounted(()=>{
         name="animate__animated animate__bounce"
         enter-active-class="animate__fadeInDown"
     >
-      <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3" id="top-nav">
         <div class="container-fluid">
           <router-link class="navbar-brand" to="/">
             Tools
@@ -69,8 +69,15 @@ onMounted(()=>{
   </div>
 </template>
 
-<style scoped>
-nav{
+<style>
+/*设置页面和滚动条*/
+body{
+  min-height: 100vh;
+  padding-bottom: 4vh;
+  overflow-y: scroll;
+}
+
+#top-nav{
   box-shadow: 0 0 5px gray;
 }
 </style>

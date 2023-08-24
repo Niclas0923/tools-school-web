@@ -1,5 +1,7 @@
 <script setup>
+import {useValueStore} from "../store/useValueStore.js";
 
+const val = useValueStore()
 </script>
 
 <template>
@@ -8,7 +10,13 @@
       name="animate__animated animate__bounce"
       enter-active-class="animate__bounceInUp"
   >
-    <h1>微信接龙处理</h1>
+    <div>
+      <h1>微信接龙处理</h1>
+      <h3>list</h3>
+      <p>{{val.list}}</p>
+      <h3>allValueList</h3>
+      <p>{{val.allValueList}}</p>
+    </div>
   </Transition>
 </template>
 

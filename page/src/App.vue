@@ -50,7 +50,14 @@ onMounted(()=>{
 
     <!-- 插入位置 -->
     <div class="container">
-      <router-view/>
+      <Transition
+          appear
+          name="animate__animated animate__bounce"
+          enter-active-class="animate__bounceInUp"
+          leave-active-class="animate__bounceOut"
+      >
+        <router-view/>
+      </Transition>
     </div>
     <!-- 刷新按钮 -->
 <!--    <button class="btn btn-success refresh-btn" @click="refresh">-->

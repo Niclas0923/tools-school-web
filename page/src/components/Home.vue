@@ -3,17 +3,15 @@
 </script>
 
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-6 cad">
-        <div class="cad-in text-center cardRollCallTool">
-          <h4 class="mb-0">点名工具</h4>
-        </div>
+  <div class="row">
+    <div class="col-6 cad">
+      <div class="cad-in text-center cardRollCallTool">
+        <h4 class="mb-0">点名工具</h4>
       </div>
-      <div class="col-6 cad">
-        <div class="cad-in text-center cardWeChatRelay">
-          <h4 class="mb-0">微信接龙</h4>
-        </div>
+    </div>
+    <div class="col-6 cad">
+      <div class="cad-in text-center cardWeChatRelay">
+        <h4 class="mb-0">微信接龙</h4>
       </div>
     </div>
   </div>

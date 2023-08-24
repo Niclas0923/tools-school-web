@@ -39,8 +39,11 @@ onMounted(()=>{
         </div>
       </nav>
     </transition>
+
     <!-- 插入位置 -->
-    <router-view/>
+    <div class="container">
+      <router-view/>
+    </div>
     <!-- 刷新按钮 -->
 <!--    <button class="btn btn-success refresh-btn" @click="refresh">-->
 <!--      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">-->

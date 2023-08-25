@@ -50,7 +50,7 @@ const router = useRouter()
 
   /*点名卡片的样式*/
   .cardRollCallTool{
-    background-color: rgb(201,202,201);
+    background-color: rgb(233,233,233);
     box-shadow: 1px 1px 8px gray;
   }
   .cardRollCallTool:hover{
@@ -61,10 +61,10 @@ const router = useRouter()
     background-color: rgb(9,206,102);
     box-shadow: 1px 1px 10px rgb(9, 208, 103);
     color: white;
-    text-shadow: 0 0 4px gray;
+    text-shadow: 1px 1px 2px black;
   }
   .cardWeChatRelay:hover{
-    box-shadow: 1px 1px 16px rgb(9, 208, 103);
+    box-shadow: 1px 1px 14px rgb(8, 208, 102);
   }
   /*所有数据卡片的样式*/
   .cardDataShow{

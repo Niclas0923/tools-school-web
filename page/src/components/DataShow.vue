@@ -11,7 +11,7 @@ const val = useValueStore()
   <Transition
       appear
       name="animate__animated animate__bounce"
-      enter-active-class="animate__bounceInUp"
+      enter-active-class="animate__zoomInUp"
   >
     <div class="table-responsive">
       <table class="table table-striped table-bordered align-middle">

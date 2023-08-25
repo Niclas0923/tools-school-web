@@ -13,22 +13,24 @@ const router = useRouter()
   <Transition
       appear
       name="animate__animated animate__bounce"
-      enter-active-class="animate__bounceInUp"
+      enter-active-class="animate__zoomInUp"
   >
-    <div class="row row-home">
-      <div class="cad col-6 col-md-4">
-        <div class="cad-in text-center cardRollCallTool" @click="router.push('/rollCallTool')">
-          <h4 class="mb-0">点名工具</h4>
+    <div class="row-home">
+      <div class="row">
+        <div class="cad col-6 col-md-4">
+          <div class="cad-in text-center cardRollCallTool" @click="router.push('/rollCallTool')">
+            <h4 class="mb-0">点名工具</h4>
+          </div>
         </div>
-      </div>
-      <div class="cad col-6 col-md-4">
-        <div class="cad-in text-center cardWeChatRelay" @click="router.push('/weChatRelay')">
-          <h4 class="mb-0">微信接龙</h4>
+        <div class="cad col-6 col-md-4">
+          <div class="cad-in text-center cardWeChatRelay" @click="router.push('/weChatRelay')">
+            <h4 class="mb-0">微信接龙</h4>
+          </div>
         </div>
-      </div>
-      <div class="cad col-6 col-md-4">
-        <div class="cad-in text-center cardDataShow" @click="router.push('/dataShow')">
-          <h4 class="mb-0">所有数据</h4>
+        <div class="cad col-6 col-md-4">
+          <div class="cad-in text-center cardDataShow" @click="router.push('/dataShow')">
+            <h4 class="mb-0">所有数据</h4>
+          </div>
         </div>
       </div>
     </div>
@@ -36,11 +38,14 @@ const router = useRouter()
 </template>
 
 <style lang="less" scoped>
+.row-home{
+  padding: 0 20px;
+}
 .cad{
   padding: 20px 40px;
 
   .cad-in{
-    padding: 40px 10px;
+    padding: 35px 20px;
     border-radius: 15px;
     cursor: pointer;  /* 设置鼠标样式为手形 */
   }

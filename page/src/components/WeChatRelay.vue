@@ -23,7 +23,7 @@ function changeInputValue(value){
   <Transition
       appear
       name="animate__animated animate__bounce"
-      enter-active-class="animate__bounceInUp"
+      enter-active-class="animate__zoomInUp"
   >
     <div>
       <div class="row">

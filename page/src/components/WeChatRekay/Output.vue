@@ -1,5 +1,5 @@
 <script setup>
-import {computed, reactive, ref, watch} from "vue";
+import {computed, onBeforeUnmount, reactive, ref, watch} from "vue";
 
 const props = defineProps(["val","inputValue"])
 
@@ -50,20 +50,66 @@ const getAndNot = computed(()=>{
 
 // 监视getAndNot
 watch(getAndNot,n=>{
+  // 直接清理所有timeout
+  for (const i of iL) {
+    if (i) clearTimeout(i)
+  }
   const get = n.get
   const canNot = n.not
-  console.log(get,canNot)
   let not = []
+
   // 制作没用接龙的
   if (get.length>0){
     not = props.val.names.filter((e)=> get.indexOf(e) === -1)
   }
-  console.log(not)
-  // 简单输出
-  outV.no = JSON.stringify(not)
-  outV.done = JSON.stringify(get)
-  outV.canNot = JSON.stringify(canNot)
+
+  // 未能打卡的部分
+  if (not.length>0){
+    let notVal = ""
+    let i1 = 0
+    iL[0] = window.setInterval(()=>{
+      notVal += `${i1+1}. ${not[i1]}`
+      notVal += (i1 === not.length-1)?"。":"，"
+      outV.no = notVal
+      if (i1 === not.length-1)clearInterval(iL[0])
+      i1++
+    },150)
+  }else outV.no = ""
+
+  // 未能识别的部分
+  if (canNot.length>0){
+    let canNotVal = ""
+    let i2 = 0
+    iL[1] = window.setInterval(()=>{
+      canNotVal += `${canNot[i2].number}. ${canNot[i2].val}`
+      canNotVal += (i2 === canNot.length-1)?"。":"，"
+      outV.canNot = canNotVal
+      if (i2 === canNot.length-1)clearInterval(iL[1])
+      i2++
+    },150)
+  }else outV.canNot = ""
+
+  // 已经接龙的部分
+  if (get.length>0){
+    let done = ""
+    let i3 = 0
+    iL[2] = window.setInterval(()=>{
+      done += `${i3+1}. ${get[i3]}`
+      done += (i3 === get.length-1)?"。":"，"
+      outV.done = done
+      if (i3 === get.length-1)clearInterval(iL[2])
+      i3++
+    },150)
+  }else outV.done = ""
 })
+
+onBeforeUnmount(()=>{
+  // 清理所有timeout
+  for (const i of iL) {
+    if (i) clearTimeout(i)
+  }
+})
+
 </script>
 
 <template>

@@ -6,6 +6,8 @@ const server = (options,httpsOn,listVal)=>{
     const app = express();
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
+    // 托管静态库
+    app.use(express.static('./page/dist'))
 
     // 获取班级列表信息
     app.get("/data",(req, res) => {

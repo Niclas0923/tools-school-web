@@ -42,6 +42,11 @@ onMounted(()=>{
                   微信接龙
                 </router-link>
               </li>
+              <li class="nav-item">
+                <router-link class="nav-link" active-class="active" to="/dataShow">
+                  所有数据
+                </router-link>
+              </li>
             </ul>
           </div>
         </div>

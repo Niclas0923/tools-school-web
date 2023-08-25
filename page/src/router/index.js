@@ -2,6 +2,7 @@ import * as VueRouter from 'vue-router'
 import Home from "../components/home.vue";
 import RollCallTool from "../components/RollCallTool.vue";
 import WeChatRelay from "../components/WeChatRelay.vue";
+import DataShow from "../components/DataShow.vue";
 
 export default VueRouter.createRouter({
     // 设置使用 hash
@@ -18,15 +19,17 @@ export default VueRouter.createRouter({
             path:"/home",
             component:Home,
         },
-        // 二级路由
         {
             path:"/rollCallTool",
             component:RollCallTool,
         },
-        // 二级路由
         {
             path:"/weChatRelay",
             component:WeChatRelay,
+        },
+        {
+            path:"/dataShow",
+            component:DataShow,
         },
     ]
 })

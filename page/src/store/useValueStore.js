@@ -24,6 +24,15 @@ export const useValueStore = defineStore("val",()=>{
         return l
     })
 
+    // names
+    const names = computed(()=>{
+        const l = []
+        list.value.forEach(v=>{
+            l.push(v["name"])
+        })
+        return l
+    })
+
     // 更新列表信息
     function updateList(){
         axios.get("/data").then(
@@ -37,5 +46,5 @@ export const useValueStore = defineStore("val",()=>{
         )
     }
 
-    return {list,miniIdAndNames,allValueList,updateList}
+    return {list,names,miniIdAndNames,allValueList,updateList}
 })

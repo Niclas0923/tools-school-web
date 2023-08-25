@@ -1,5 +1,8 @@
 <script setup>
 import {useRouter} from "vue-router";
+// 自动收起navbar
+import {useCloseNavbar} from "../hooks/useCloseNavbar.js";
+useCloseNavbar()
 
 // 引入路由器
 const router = useRouter()

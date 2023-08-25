@@ -1,5 +1,8 @@
 <script setup>
 import {useValueStore} from "../store/useValueStore.js";
+// 自动收起navbar
+import {useCloseNavbar} from "../hooks/useCloseNavbar.js";
+useCloseNavbar()
 
 const val = useValueStore()
 </script>

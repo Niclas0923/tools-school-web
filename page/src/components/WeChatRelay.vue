@@ -1,10 +1,22 @@
 <script setup>
 import {useValueStore} from "../store/useValueStore.js";
+import Input from "./WeChatRekay/Input.vue";
+import Output from "./WeChatRekay/Output.vue";
 // 自动收起navbar
 import {useCloseNavbar} from "../hooks/useCloseNavbar.js";
+import {ref} from "vue";
 useCloseNavbar()
 
 const val = useValueStore()
+
+// 这个是输入的信息，需要传给显示进行处理
+let inputValue = ref("")
+
+// 修改输入信息，需要传给输入部分
+function changeInputValue(value){
+  inputValue.value = value
+}
+
 </script>
 
 <template>
@@ -14,11 +26,10 @@ const val = useValueStore()
       enter-active-class="animate__bounceInUp"
   >
     <div>
-      <h1>微信接龙处理</h1>
-      <h3>list</h3>
-      <p>{{val.list}}</p>
-      <h3>allValueList</h3>
-      <p>{{val.allValueList}}</p>
+      <div class="row">
+        <Input :changeInputValue="changeInputValue"/>
+        <Output :val="val" :input-value="inputValue"/>
+      </div>
     </div>
   </Transition>
 </template>

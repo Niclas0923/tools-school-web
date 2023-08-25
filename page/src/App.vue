@@ -17,7 +17,7 @@ onMounted(()=>{
         name="animate__animated animate__bounce"
         enter-active-class="animate__fadeInDown"
     >
-      <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3" id="top-nav">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary mb-4" id="top-nav">
         <div class="container-fluid">
           <router-link class="navbar-brand" to="/">
             Tools

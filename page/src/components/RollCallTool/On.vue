@@ -22,6 +22,6 @@ const list = useRollCallListStore()
 <style scoped>
 .cards{
   cursor: pointer;  /* 设置鼠标样式为手形 */
-  box-shadow: 0 0 5px blue;
+  box-shadow: 0 0 5px rgb(11,110,253);
 }
 </style>

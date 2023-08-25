@@ -1,5 +1,5 @@
 import {defineStore} from "pinia";
-import {reactive, toRaw, watch} from "vue";
+import {reactive, toRaw} from "vue";
 
 export const useRollCallListStore = defineStore("rollCallList",()=>{
     const list = reactive({
@@ -38,5 +38,20 @@ export const useRollCallListStore = defineStore("rollCallList",()=>{
         safe()
     }
 
-    return {list,initialization,onClick,downClick}
+    // 刷新
+    function refresh(){
+        const result = confirm("是否要刷新这个标签的数据？所有人都会被移动到下方。");
+        if (result) {
+            list.allOn.home = []
+            safe()
+        }
+    }
+
+    // 上下对调
+    function changeUpDone(){
+        list.allOn.home = list.allId.filter(i => list.allOn.home.indexOf(i) === -1)
+        safe()
+    }
+
+    return {list,initialization,onClick,downClick,refresh,changeUpDone}
 })

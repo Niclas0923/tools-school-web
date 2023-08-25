@@ -5,6 +5,7 @@ import {useCloseNavbar} from "../hooks/useCloseNavbar.js";
 useCloseNavbar()
 import On from "./RollCallTool/On.vue";
 import Down from "./RollCallTool/down.vue";
+import Btn from "./RollCallTool/Btn.vue";
 
 const val = useValueStore()
 </script>
@@ -21,6 +22,7 @@ const val = useValueStore()
       <Down :miniIdToNames="val.miniIdToNames" :miniIds="val.miniIds"/>
     </div>
   </Transition>
+  <Btn/>
 </template>
 
 <style scoped>

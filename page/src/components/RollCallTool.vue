@@ -3,6 +3,8 @@ import {useValueStore} from "../store/useValueStore.js";
 // 自动收起navbar
 import {useCloseNavbar} from "../hooks/useCloseNavbar.js";
 useCloseNavbar()
+import On from "./RollCallTool/On.vue";
+import Down from "./RollCallTool/down.vue";
 
 const val = useValueStore()
 </script>
@@ -14,9 +16,9 @@ const val = useValueStore()
       enter-active-class="animate__bounceInUp"
   >
     <div>
-      <h1>点名工具</h1>
-      <h3>miniIdAndNames</h3>
-      <p>{{val.miniIdAndNames}}</p>
+      <On :miniIdToNames="val.miniIdToNames"/>
+      <hr style="color: black;margin: 40px">
+      <Down :miniIdToNames="val.miniIdToNames" :miniIds="val.miniIds"/>
     </div>
   </Transition>
 </template>

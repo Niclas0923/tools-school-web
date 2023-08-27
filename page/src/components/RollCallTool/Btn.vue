@@ -64,21 +64,28 @@ function close(){
     <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></span></span>
   </button>
   <Teleport to="body">
-    <div class="mask" v-if="show">
-      <div class="in">
-        <h3>名称</h3>
-        <div class="mb-3">
-          <input type="text" class="form-control" style="border-color: rgba(0,0,0,0.8)" v-model="val">
-          <div id="emailHelp" class="form-text">请填写只包含子母和数字组合的短语，不允许使用特殊符号，不允许重复。</div>
-        </div>
-        <button type="submit" class="btn btn-primary" @click="add">添加</button>
-        <div class="close" @click="close">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-          </svg>
+    <Transition
+        appear
+        name="animate__animated animate__bounce"
+        enter-active-class="animate__bounceInUp"
+        leave-active-class="animate__bounceOutDown"
+    >
+      <div class="mask" v-if="show">
+        <div class="in">
+          <h3>名称</h3>
+          <div class="mb-3">
+            <input type="text" class="form-control" style="border-color: rgba(0,0,0,0.8)" v-model="val">
+            <div id="emailHelp" class="form-text">请填写只包含子母和数字组合的短语，不允许使用特殊符号，不允许重复。</div>
+          </div>
+          <button type="submit" class="btn btn-primary" @click="add">添加</button>
+          <div class="close" @click="close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+              <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+            </svg>
+          </div>
         </div>
       </div>
-    </div>
+    </Transition>
   </Teleport>
 </template>
 

@@ -1,5 +1,5 @@
 import {defineStore} from "pinia";
-import {computed, reactive, toRaw} from "vue";
+import {reactive, toRaw} from "vue";
 
 export const useRollCallListStore = defineStore("rollCallList",()=>{
     const list = reactive({

@@ -8,7 +8,7 @@ const list = useRollCallListStore()
 
 <template>
   <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4">
-    <div class="col" v-for="(i,o) in list.list['allOn']['home']" :key="i">
+    <div class="col" v-for="(i,o) in list.list['allOn']['val'][list.list.now]" :key="i">
       <div class="card h-100 text-center text-bg-primary cards" @click="list.onClick(i)">
         <div class="card-header">{{o+1}}</div>
         <div class="card-body">

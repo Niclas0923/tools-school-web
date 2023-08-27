@@ -1,13 +1,23 @@
 import {defineStore} from "pinia";
-import {reactive, toRaw} from "vue";
+import {computed, reactive, toRaw} from "vue";
 
 export const useRollCallListStore = defineStore("rollCallList",()=>{
     const list = reactive({
         allOn:{
-            home:[],
+            tag:["home"],
+            val:{
+                home:[]
+            }
         },
-        allId:[]
+        allId:[],
+        // 这个now是用来读取的
+        now:computed(()=>{
+            return list.nowWhite?list.nowWhite:list.allOn.tag[0]
+        }),
+        // 这个值是用于写入的
+        nowWhite:""
     })
+
 
     // 初始化
     function initialization(ids){
@@ -19,6 +29,8 @@ export const useRollCallListStore = defineStore("rollCallList",()=>{
         }else{
             safe()
         }
+        // 设置now
+        list.nowWhite = list.allOn.tag[0]
         // console.log(list.allOn.home)
     }
 

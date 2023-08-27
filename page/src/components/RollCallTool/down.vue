@@ -7,8 +7,8 @@ const props = defineProps(["miniIdToNames","miniIds"])
 const list = useRollCallListStore()
 
 const done = computed(()=>{
-  // console.log(list.list["allOn"]['home'])
-  return props.miniIds.filter(i => list.list["allOn"]['home'].indexOf(i) === -1)
+  // console.log(list.list["allOn"]["val"])
+  return props.miniIds.filter(i => list.list["allOn"]["val"][list.list.now].indexOf(i) === -1)
 })
 </script>
 

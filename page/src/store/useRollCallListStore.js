@@ -73,5 +73,13 @@ export const useRollCallListStore = defineStore("rollCallList",()=>{
         // {"tag":["home","test"],"val":{"home":[],"test":[]}}
     }
 
-    return {list,initialization,onClick,downClick,refresh,changeUpDone,delNow}
+    // 添加一个
+    function addOneList(name){
+        list.allOn.tag.push(name)
+        list.allOn.val[name] = []
+        list.now = name
+        safe()
+    }
+
+    return {list,initialization,onClick,downClick,refresh,changeUpDone,delNow,addOneList}
 })

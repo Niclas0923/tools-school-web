@@ -1,8 +1,35 @@
 <script setup>
 
 import {useRollCallListStore} from "../../store/useRollCallListStore.js";
+import {ref} from "vue";
 
 const list = useRollCallListStore()
+
+let show = ref(false)
+let val = ref("")
+
+// 用于判断是否含有特殊符号
+function containsSpecialCharacter(str) {
+  let regex = /[^A-Za-z0-9\u4e00-\u9fa5]/;
+  return regex.test(str);
+}
+
+function add(){
+  if (val.value){
+    if (list.list.allOn.tag.indexOf(val.value) === -1){
+      if(!containsSpecialCharacter(val.value)){
+        list.addOneList(val.value)
+        show.value = false
+      }else alert("不得含有特殊符号。")
+    }else alert("不能重复。")
+  }else alert("不得为空。")
+}
+
+function close(){
+  show.value = false
+  val.value = ""
+}
+
 </script>
 
 <template>
@@ -29,6 +56,23 @@ const list = useRollCallListStore()
     </svg>
     <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></span></span>
   </button>
+  <Teleport to="body">
+    <div class="mask" v-if="show">
+      <div class="in">
+        <h3>名称</h3>
+        <div class="mb-3">
+          <input type="text" class="form-control" style="border-color: rgba(0,0,0,0.8)" v-model="val">
+          <div id="emailHelp" class="form-text">请填写只包含子母和数字组合的短语，不允许使用特殊符号，不允许重复。</div>
+        </div>
+        <button type="submit" class="btn btn-primary" @click="add">添加</button>
+        <div class="close" @click="close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </Teleport>
 </template>
 
 <style scoped>
@@ -46,5 +90,26 @@ const list = useRollCallListStore()
 .delBtn{
   right: 15px;
   bottom: 15px;
+}
+.mask{
+  position: absolute;
+  top: 0;bottom: 0;left: 0;right: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+.in{
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  padding: 50px 50px 70px;
+  border-radius: 20px;
+  max-width: 400px;
+  transform: translate(-50%,-50%);
+}
+.close{
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  cursor: pointer;  /* 设置鼠标样式为手形 */
 }
 </style>

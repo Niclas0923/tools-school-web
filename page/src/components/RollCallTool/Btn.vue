@@ -48,6 +48,13 @@ function close(){
     </svg>
     <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></span></span>
   </button>
+  <!-- 增添的按钮 -->
+  <button type="button" @click="show = true;val = ''" class="btn btn-primary addBtn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+    </svg>
+    <span style="vertical-align: inherit;"><span style="vertical-align: inherit;"></span></span>
+  </button>
   <!-- 删除标签的按钮 -->
   <button type="button" @click="list.delNow()" v-if="list.list.allOn.tag.length > 1" class="btn btn-danger delBtn">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -87,9 +94,13 @@ function close(){
   left: 15px;
   bottom: 65px;
 }
-.delBtn{
+.addBtn{
   right: 15px;
   bottom: 15px;
+}
+.delBtn{
+  right: 15px;
+  bottom: 65px;
 }
 .mask{
   position: absolute;

@@ -3,6 +3,7 @@ import {useValueStore} from "../store/useValueStore.js";
 // 自动收起navbar
 import {useCloseNavbar} from "../hooks/useCloseNavbar.js";
 useCloseNavbar()
+import Choice from "./RollCallTool/Choice.vue";
 import On from "./RollCallTool/On.vue";
 import Down from "./RollCallTool/down.vue";
 import Btn from "./RollCallTool/Btn.vue";
@@ -17,6 +18,7 @@ const val = useValueStore()
       enter-active-class="animate__zoomInUp"
   >
     <div>
+      <Choice/>
       <On :miniIdToNames="val.miniIdToNames"/>
       <hr style="color: black;margin: 40px">
       <Down :miniIdToNames="val.miniIdToNames" :miniIds="val.miniIds"/>

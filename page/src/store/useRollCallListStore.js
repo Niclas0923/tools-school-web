@@ -65,5 +65,10 @@ export const useRollCallListStore = defineStore("rollCallList",()=>{
         safe()
     }
 
-    return {list,initialization,onClick,downClick,refresh,changeUpDone}
+    // 修改now
+    function changeNow(val){
+        list.nowWhite = val
+    }
+
+    return {list,initialization,onClick,downClick,refresh,changeUpDone,changeNow}
 })

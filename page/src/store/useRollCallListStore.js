@@ -10,12 +10,7 @@ export const useRollCallListStore = defineStore("rollCallList",()=>{
             }
         },
         allId:[],
-        // 这个now是用来读取的
-        now:computed(()=>{
-            return list.nowWhite?list.nowWhite:list.allOn.tag[0]
-        }),
-        // 这个值是用于写入的
-        nowWhite:""
+        now:"home"
     })
 
 
@@ -30,7 +25,7 @@ export const useRollCallListStore = defineStore("rollCallList",()=>{
             safe()
         }
         // 设置now
-        list.nowWhite = list.allOn.tag[0]
+        list.now = list.allOn.tag[0]
         // console.log(list.allOn.home)
     }
 
@@ -65,10 +60,18 @@ export const useRollCallListStore = defineStore("rollCallList",()=>{
         safe()
     }
 
-    // 修改now
-    function changeNow(val){
-        list.nowWhite = val
+    // 删除当前表
+    function delNow(){
+        const result = confirm(`是否要删除${list.now}这个标签的数据？删除后无法恢复数据。`);
+        if (result) {
+            list.allOn.tag.splice(list.allOn.tag.indexOf(list.now),1)
+            delete list.allOn.val[list.now]
+            // 设置now
+            list.now = list.allOn.tag[0]
+            safe()
+        }
+        // {"tag":["home","test"],"val":{"home":[],"test":[]}}
     }
 
-    return {list,initialization,onClick,downClick,refresh,changeUpDone,changeNow}
+    return {list,initialization,onClick,downClick,refresh,changeUpDone,delNow}
 })

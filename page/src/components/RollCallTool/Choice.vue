@@ -1,16 +1,17 @@
 <script setup>
 import {useRollCallListStore} from "../../store/useRollCallListStore.js";
-import {ref} from "vue";
 
 const list = useRollCallListStore()
 
-// 用于储存当前点击位置
-let c = ref(list.list.now)
+// 修改now
+function changeValue(e){
+  list.list.now = e.target.value
+}
 
 </script>
 
 <template>
-  <select class="form-select mb-4" aria-label="Default select example" v-model="c" @change="list.changeNow(c)">
+  <select class="form-select mb-4" aria-label="Default select example" v-model="list.list.now" @change="changeValue">
     <option v-for="i in list.list.allOn.tag" :value="i">
       {{i}}
     </option>

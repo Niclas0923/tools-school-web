@@ -12,13 +12,28 @@
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
+1.  克隆或者下载整个项目
+2.  下载服务器端库文件
+    ```shell
+    npm install
+    ```
+3.  进入page文件夹，下载页面的构建库文件并进行编译
+    ```shell
+    cd page
+    npm install
+    npm build
+    ```
+4. 返回初始文件夹，进入config文件夹，对配置文件进行修改
+    ```shell
+    cd ..
+    cd config
+    # 服务器相关配置
+    vim server.json
+    # 页面信息配置
+    vim list.json
+    ```
+5. 回到初始文件夹，开启服务器
+    ```shell
+    cd ..
+    npm run st
+    ```

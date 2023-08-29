@@ -4,6 +4,7 @@ import {useValueStore} from "../store/useValueStore.js";
 import {useCloseNavbar} from "../hooks/useCloseNavbar.js";
 useCloseNavbar()
 import {computed, ref} from "vue";
+import tinyPinyin from 'tiny-pinyin'
 
 const val = useValueStore()
 
@@ -14,7 +15,7 @@ let searchValue = ref("")
 const showList = computed(()=>{
   if (searchValue.value){
     const list =  val.list.filter(i=>{
-      return [i.id,i.name,...i.tags].join(" ").includes(searchValue.value)
+      return [i.id,i.name,...i.tags,tinyPinyin.convertToPinyin(i.name).toLowerCase()].join(" ").includes(searchValue.value)
     })
     return list.length >0?list:[{name:"无匹配项", id:"无匹配项", tags:"无匹配项"}]
   }else {

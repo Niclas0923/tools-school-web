@@ -3,12 +3,24 @@ import {useValueStore} from "../store/useValueStore.js";
 // 自动收起navbar
 import {useCloseNavbar} from "../hooks/useCloseNavbar.js";
 useCloseNavbar()
-import {ref} from "vue";
+import {computed, ref} from "vue";
 
 const val = useValueStore()
 
 // 搜索信息
 let searchValue = ref("")
+
+// 显示信息
+const showList = computed(()=>{
+  if (searchValue.value){
+    const list =  val.list.filter(i=>{
+      return [i.id,i.name,...i.tags].join(" ").includes(searchValue.value)
+    })
+    return list.length >0?list:[{name:"无匹配项", id:"无匹配项", tags:"无匹配项"}]
+  }else {
+    return val.list
+  }
+})
 
 </script>
 
@@ -43,7 +55,7 @@ let searchValue = ref("")
           </tr>
           </thead>
           <tbody>
-          <tr v-for="i in val.list" :key="i['id']">
+          <tr v-for="i in showList" :key="i['id']">
             <th scope="row">{{i['id']}}</th>
             <td>{{i["name"]}}</td>
             <td>{{i["tags"]}}</td>

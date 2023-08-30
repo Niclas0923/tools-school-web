@@ -21,7 +21,6 @@ npm 9.7.2
     ```shell
     npm install
     ```
-    ```
 3. 进入config文件夹，对配置文件进行修改，之后返回
     ```shell
     cd config

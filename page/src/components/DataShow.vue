@@ -31,7 +31,7 @@ const showList = computed(()=>{
       name="animate__animated animate__bounce"
       enter-active-class="animate__zoomInUp"
   >
-    <div>
+    <div class="miniFont">
       <div style="position: relative;">
         <input type="text" class="input mb-3" v-model.trim="searchValue"/>
         <!-- 搜索图标 -->
@@ -101,5 +101,8 @@ const showList = computed(()=>{
 }
 .clear{
   right: 12px;
+}
+.miniFont{
+  font-size: 14px;
 }
 </style>

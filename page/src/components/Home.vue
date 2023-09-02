@@ -15,21 +15,23 @@ const router = useRouter()
       name="animate__animated animate__bounce"
       enter-active-class="animate__zoomInUp"
   >
-    <div class="row-home">
-      <div class="row">
-        <div class="cad col-6 col-md-4">
-          <div class="cad-in text-center cardRollCallTool" @click="router.push('/rollCallTool')">
-            <h4 class="mb-0">点名工具</h4>
+    <div class="page">
+      <div class="row-home">
+        <div class="row">
+          <div class="cad col-6 col-md-4">
+            <div class="cad-in text-center cardRollCallTool" @click="router.push('/rollCallTool')">
+              <h4 class="mb-0">点名工具</h4>
+            </div>
           </div>
-        </div>
-        <div class="cad col-6 col-md-4">
-          <div class="cad-in text-center cardWeChatRelay" @click="router.push('/weChatRelay')">
-            <h4 class="mb-0">微信接龙</h4>
+          <div class="cad col-6 col-md-4">
+            <div class="cad-in text-center cardWeChatRelay" @click="router.push('/weChatRelay')">
+              <h4 class="mb-0">微信接龙</h4>
+            </div>
           </div>
-        </div>
-        <div class="cad col-6 col-md-4">
-          <div class="cad-in text-center cardDataShow" @click="router.push('/dataShow')">
-            <h4 class="mb-0">所有数据</h4>
+          <div class="cad col-6 col-md-4">
+            <div class="cad-in text-center cardDataShow" @click="router.push('/dataShow')">
+              <h4 class="mb-0">所有数据</h4>
+            </div>
           </div>
         </div>
       </div>
@@ -38,11 +40,21 @@ const router = useRouter()
 </template>
 
 <style lang="less" scoped>
+.page{
+  height: 80vh;
+  position: relative;
+
+}
 .row-home{
   padding: 0 20px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top:50%;
+  left: 50%;
+  width: 90%;
 }
 .cad{
-  padding: 20px 40px;
+  padding: 20px 30px;
 
   .cad-in{
     padding: 35px 20px;

@@ -77,8 +77,8 @@ function close(){
         enter-active-class="animate__bounceInUp"
         leave-active-class="animate__bounceOutDown"
     >
-      <div class="mask" v-if="show">
-        <div class="in">
+      <div class="mask" v-if="show" @click.self="close">
+        <div class="in col-10 col-sm-8 col-md-6 col-lg-4 col-xxl-3">
           <h3>名称</h3>
           <div class="mb-3">
             <input type="text" class="form-control" style="border-color: rgba(0,0,0,0.8)" v-model="val">
@@ -128,7 +128,6 @@ function close(){
   top: 45%;
   padding: 50px 50px 70px;
   border-radius: 20px;
-  max-width: 400px;
   transform: translate(-50%,-50%);
 }
 .close{

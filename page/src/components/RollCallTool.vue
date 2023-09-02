@@ -17,7 +17,7 @@ const val = useValueStore()
       name="animate__animated animate__bounce"
       enter-active-class="animate__zoomInUp"
   >
-    <div>
+    <div class="page">
       <Choice/>
       <On :miniIdToNames="val.miniIdToNames"/>
       <hr style="color: black;margin: 40px">
@@ -28,5 +28,7 @@ const val = useValueStore()
 </template>
 
 <style scoped>
-
+.page{
+  padding-bottom: 90px;
+}
 </style>

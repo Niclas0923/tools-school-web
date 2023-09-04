@@ -11,7 +11,13 @@ import {computed} from "vue";
 const showList = computed(()=>{
   if (val2.searchValue){
     const list =  val.list.filter(i=>{
-      return [i.id,i.name,...i.tags,tinyPinyin.convertToPinyin(i.name).toLowerCase()].join(" ").includes(val2.searchValue)
+      let all = ""
+      let Initial = ""
+      tinyPinyin.parse(i.name).forEach(i=>{
+        all += i.target
+        Initial += i.target[0]
+      })
+      return [i.id,i.name,...i.tags,all.toLowerCase(),Initial.toLowerCase()].join(" ").includes(val2.searchValue)
     })
     return list.length >0?list:[{name:"无匹配项", id:"无匹配项", tags:"无匹配项"}]
   }else {

@@ -174,7 +174,7 @@ function outGet(){
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 5px gray;
+  box-shadow: 0 0 5px rgb(128, 128, 128);
 }
 .texts{
   background-color: rgb(233,233,233);

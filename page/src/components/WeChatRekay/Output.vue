@@ -117,13 +117,37 @@ onBeforeUnmount(()=>{
     <div id="under">
       <div id="value">
         <h5>未接龙名单</h5>
-        <div id="noGet" class="texts">{{!outV.no?"空。":outV.no}}</div>
+        <div id="noGet" class="texts">
+          {{!outV.no?"空。":outV.no}}
+          <div class="out">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
+              <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z"/>
+            </svg>
+          </div>
+        </div>
         <br>
         <h5>未识别内容</h5>
-        <div id="cannotRead" class="texts">{{!outV.canNot?"空。":outV.canNot}}</div>
+        <div id="cannotRead" class="texts">
+          {{!outV.canNot?"空。":outV.canNot}}
+          <div class="out">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
+              <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z"/>
+            </svg>
+          </div>
+        </div>
         <br>
         <h5>已接龙名单</h5>
-        <div id="get" class="texts">{{!outV.done?"空。":outV.done}}</div>
+        <div id="get" class="texts">
+          {{!outV.done?"空。":outV.done}}
+          <div class="out">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1h-2z"/>
+              <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708l3-3z"/>
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -134,7 +158,7 @@ onBeforeUnmount(()=>{
   width: 100%;
   padding: 20px;
 }
-#value{
+#value {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
@@ -144,5 +168,15 @@ onBeforeUnmount(()=>{
   background-color: rgb(233,233,233);
   padding: 10px 15px;
   border-radius: 15px;
+  position: relative;
+}
+.out{
+  cursor: pointer;  /* 设置鼠标样式为手形 */
+  position: absolute;
+  right: 15px;
+  bottom: 12px;
+}
+svg:hover{
+  color: #0d6efd;
 }
 </style>

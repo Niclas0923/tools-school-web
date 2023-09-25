@@ -115,7 +115,7 @@ function outNoGet(){
   if (getAndNot.value.get.length>0){
     not = props.val.names.filter((e)=> getAndNot.value.get.indexOf(e) === -1)
   }
-  console.log(not.join(","))
+  copy(not.join(","))
 }
 
 function outCannotRead(){
@@ -123,11 +123,21 @@ function outCannotRead(){
   getAndNot.value.not.forEach(e=>{
     value.push(e.val)
   })
-  console.log(value.join(","))
+  copy(value.join(","))
 }
 
 function outGet(){
-  console.log(getAndNot.value.get.join(","))
+  copy(getAndNot.value.get.join(","))
+}
+
+function copy(text){
+  navigator.clipboard.writeText(text)
+      .then(() => {
+        alert("复制成功")
+      })
+      .catch(() => {
+        alert("没有剪贴板权限，请授权后重试")
+      });
 }
 
 </script>

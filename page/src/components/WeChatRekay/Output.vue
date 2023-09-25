@@ -111,15 +111,23 @@ onBeforeUnmount(()=>{
 })
 
 function outNoGet(){
-  console.log("outNoGet")
+  let not = []
+  if (getAndNot.value.get.length>0){
+    not = props.val.names.filter((e)=> getAndNot.value.get.indexOf(e) === -1)
+  }
+  console.log(not.join(","))
 }
 
 function outCannotRead(){
-  console.log("outCannotRead")
+  let value = []
+  getAndNot.value.not.forEach(e=>{
+    value.push(e.val)
+  })
+  console.log(value.join(","))
 }
 
 function outGet(){
-  console.log("outGet")
+  console.log(getAndNot.value.get.join(","))
 }
 
 </script>

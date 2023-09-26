@@ -131,13 +131,15 @@ function outGet(){
 }
 
 function copy(text){
-  navigator.clipboard.writeText(text)
-      .then(() => {
-        alert("复制成功")
-      })
-      .catch(() => {
-        alert("没有剪贴板权限，请授权后重试")
-      });
+  if (text){
+    navigator.clipboard.writeText(text)
+        .then(() => {
+          alert("复制成功。")
+        })
+        .catch(() => {
+          alert("没有剪贴板权限，请授权后重试。")
+        });
+  }else alert("导出内容为空。")
 }
 
 </script>

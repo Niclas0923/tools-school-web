@@ -1,5 +1,6 @@
 <script setup>
 import {onBeforeUnmount, onMounted, reactive} from "vue";
+import Output from "../WeChatRekay/Output.vue";
 
 const data = reactive({
   height:{
@@ -38,13 +39,48 @@ onBeforeUnmount(()=>{
 
 <template>
 <div>
-  <h3>长：</h3>
-  <h3>{{data.height.in}}px(in) {{data.height.out}}px(out)</h3>
-  <h3>宽：</h3>
-  <h3 class="mb-1">{{data.width.in}}px(in) {{data.width.out}}px(out)</h3>
+  <h4>长：</h4>
+  <div class="out">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">in</th>
+        <th scope="col">out</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>{{data.height.in}}px</td>
+        <td>{{data.height.out}}px</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <h4>宽：</h4>
+  <div class="out">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">in</th>
+        <th scope="col">out</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>{{data.width.in}}px</td>
+        <td>{{data.width.out}}px</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>
 </template>
 
 <style scoped>
-
+.out{
+  box-shadow: 0 0 1px black;
+  border-radius: 7px;
+  padding: 0 10px;
+}
 </style>

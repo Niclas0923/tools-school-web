@@ -32,8 +32,8 @@ a:hover{
   color: black;
 }
 .show{
-  padding: 20px 40px;
+  padding: 40px 45px;
   border-radius: 15px;
-  background-color: rgb(225, 225, 225);
+  background-color: rgb(235, 235, 235);
 }
 </style>

@@ -34,6 +34,6 @@ a:hover{
 .show{
   padding: 40px 45px;
   border-radius: 15px;
-  background-color: rgb(235, 235, 235);
+  background-color: rgba(235, 235, 235,0.4);
 }
 </style>

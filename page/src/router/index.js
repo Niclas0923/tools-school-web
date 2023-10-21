@@ -4,6 +4,7 @@ import RollCallTool from "../components/RollCallTool.vue";
 import WeChatRelay from "../components/WeChatRelay.vue";
 import DataShow from "../components/DataShow.vue";
 import Others from "../components/Others.vue";
+import ScreenSize from "../components/Others/ScreenSize.vue";
 
 export default VueRouter.createRouter({
     // 设置使用 hash
@@ -34,7 +35,15 @@ export default VueRouter.createRouter({
         },
         {
             path:"/others",
-            component:Others
-        }
+            component:Others,
+            // 直接跳转到页面尺寸
+            redirect: '/others/screenSize',
+            children:[
+                {
+                    path:"screenSize",
+                    component:ScreenSize
+                }
+            ]
+        },
     ]
 })

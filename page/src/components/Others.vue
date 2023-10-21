@@ -14,14 +14,11 @@ useCloseNavbar()
     <div>
       <ul class="nav nav-tabs mb-3">
         <li class="nav-item">
-          <router-link class="nav-link" active-class="active" to="/others/test1">test1</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" active-class="active" to="/others/test2">test2</router-link>
+          <router-link class="nav-link" active-class="active" to="/others/screenSize">屏幕尺寸</router-link>
         </li>
       </ul>
       <div class="show">
-        <router-view></router-view>
+        <router-view/>
       </div>
     </div>
   </Transition>

@@ -47,6 +47,11 @@ onMounted(()=>{
                   所有数据
                 </router-link>
               </li>
+              <li class="nav-item">
+                <router-link class="nav-link" active-class="active" to="/others">
+                  其他工具
+                </router-link>
+              </li>
             </ul>
           </div>
         </div>

@@ -3,6 +3,7 @@ import Home from "../components/home.vue";
 import RollCallTool from "../components/RollCallTool.vue";
 import WeChatRelay from "../components/WeChatRelay.vue";
 import DataShow from "../components/DataShow.vue";
+import Others from "../components/Others.vue";
 
 export default VueRouter.createRouter({
     // 设置使用 hash
@@ -31,5 +32,9 @@ export default VueRouter.createRouter({
             path:"/dataShow",
             component:DataShow,
         },
+        {
+            path:"/others",
+            component:Others
+        }
     ]
 })

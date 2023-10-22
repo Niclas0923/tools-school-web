@@ -15,7 +15,7 @@ watch(val,n=>{
 </script>
 
 <template>
-  <div class="col-12 col-lg-6">
+  <div class="col-12 col-sm-6">
     <div id="inputs" class="form-floating">
       <textarea class="form-control textarea" placeholder="请粘贴接龙" id="floatingTextarea2" v-model="val"></textarea>
       <label for="floatingTextarea2">请粘贴接龙</label>
@@ -32,8 +32,8 @@ watch(val,n=>{
 #inputs{
   position: relative;
   overflow: hidden;
-  height: 42vh;
-  padding: 20px
+  height: 336px;
+  padding: 10px;
 }
 #inputs>textarea{
   resize: none;
@@ -41,7 +41,7 @@ watch(val,n=>{
   height: 100%;
   border-radius: 10px;
   padding: 25px 20px;
-  box-shadow: 0 0 5px gray;
+  box-shadow: 0 0 5px rgb(128, 128, 128);
 }
 #inputs>label{
   position: absolute;left: 25px;top: 20px;

@@ -145,7 +145,7 @@ function copy(text){
 </script>
 
 <template>
-  <div class="col-12 col-lg-6">
+  <div class="col-12 col-sm-6">
     <div id="under">
       <div id="value">
         <h5>未接龙名单</h5>
@@ -188,7 +188,7 @@ function copy(text){
 <style scoped>
 #under{
   width: 100%;
-  padding: 20px;
+  padding: 10px;
 }
 #value {
   background-color: white;

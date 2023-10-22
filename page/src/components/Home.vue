@@ -18,19 +18,24 @@ const router = useRouter()
     <div class="page">
       <div class="row-home">
         <div class="row">
-          <div class="cad col-6 col-md-4">
+          <div class="cad col-6 col-lg-3">
             <div class="cad-in text-center cardRollCallTool" @click="router.push('/rollCallTool')">
               <h4 class="mb-0">点名工具</h4>
             </div>
           </div>
-          <div class="cad col-6 col-md-4">
+          <div class="cad col-6 col-lg-3">
             <div class="cad-in text-center cardWeChatRelay" @click="router.push('/weChatRelay')">
               <h4 class="mb-0">微信接龙</h4>
             </div>
           </div>
-          <div class="cad col-6 col-md-4">
+          <div class="cad col-6 col-lg-3">
             <div class="cad-in text-center cardDataShow" @click="router.push('/dataShow')">
               <h4 class="mb-0">所有数据</h4>
+            </div>
+          </div>
+          <div class="cad col-6 col-lg-3">
+            <div class="cad-in text-center cardDataShow" @click="router.push('/others')">
+              <h4 class="mb-0">其他工具</h4>
             </div>
           </div>
         </div>

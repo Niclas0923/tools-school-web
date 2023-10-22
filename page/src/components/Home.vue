@@ -41,7 +41,7 @@ const router = useRouter()
 
 <style lang="less" scoped>
 .page{
-  height: 80vh;
+  height: 75vh;
   position: relative;
 
 }
@@ -57,7 +57,7 @@ const router = useRouter()
   padding: 20px 30px;
 
   .cad-in{
-    padding: 35px 20px;
+    padding: 35px 15px;
     border-radius: 15px;
     cursor: pointer;  /* 设置鼠标样式为手形 */
   }

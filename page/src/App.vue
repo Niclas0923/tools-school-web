@@ -78,6 +78,7 @@ body{
   min-height: 100vh;
   padding-bottom: 4vh;
   overflow-y: scroll;
+  background-color: rgba(245,245,245,0.5);
 }
 
 #top-nav{

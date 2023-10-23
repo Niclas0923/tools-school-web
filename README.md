@@ -80,14 +80,18 @@
 
 #### 路由情况
 - / --> /home  
-  - /home
+  - home
     - 主页(可转跳到其他页面)  
-  - /rollCallTool
+  - rollCallTool
     - 点名页面
-  - /weChatRelay
+  - weChatRelay
     - 微信接龙处理
-  - /dataShow
+  - dataShow
     - 数据显示和搜索
+  - others --> /others/screenSize
+    - 其他工具页面
+    - screenSize
+      - 屏幕尺寸工具
 
 ### 开发教程
 1. 先通过使用教程成功运行项目

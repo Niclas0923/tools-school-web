@@ -20,7 +20,7 @@ const val = useValueStore()
     <div class="page">
       <Choice/>
       <On :miniIdToNames="val.miniIdToNames"/>
-      <hr style="color: black;margin: 40px">
+      <hr style="color: black;margin: 10px">
       <Down :miniIdToNames="val.miniIdToNames" :miniIds="val.miniIds"/>
     </div>
   </Transition>

@@ -118,28 +118,28 @@ function outNoGet(){
   if (getAndNot.value.get.length>0){
     not = props.val.names.filter((e)=> getAndNot.value.get.indexOf(e) === -1)
   }
-  if (set.printOptions.before) for (let i in not){
+  if (set.set.printOptions.before) for (let i in not){
     not[i] = `${Number(i)+1}. `+ not[i]
   }
-  copy(not.join(set.printOptions.join))
+  copy(not.join(set.set.printOptions.join))
 }
 
 function outCannotRead(){
   let value = []
   getAndNot.value.not.forEach((e,i)=>{
     let pushValue = e.val
-    if (set.printOptions.before) pushValue = `${Number(i)+1}. `+pushValue
+    if (set.set.printOptions.before) pushValue = `${Number(i)+1}. `+pushValue
     value.push(pushValue)
   })
-  copy(value.join(set.printOptions.join))
+  copy(value.join(set.set.printOptions.join))
 }
 
 function outGet(){
   let joinValue = getAndNot.value.get
-  if (set.printOptions.before) for (let i in joinValue) {
+  if (set.set.printOptions.before) for (let i in joinValue) {
     joinValue[i] = `${Number(i)+1}. `+ joinValue[i]
   }
-  copy(joinValue.join(set.printOptions.join))
+  copy(joinValue.join(set.set.printOptions.join))
 }
 
 function copy(text){

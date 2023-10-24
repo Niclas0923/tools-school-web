@@ -24,10 +24,10 @@ function out(){
   let logList = []
   for (const i in data) {
     let pushValue = props.miniIdToNames[String(Number(data[i]))]
-    if (set.printOptions.before) pushValue = `${Number(i)+1}. `+ pushValue
+    if (set.set.printOptions.before) pushValue = `${Number(i)+1}. `+ pushValue
     logList.push(pushValue)
   }
-  copy(logList.join(set.printOptions.join))
+  copy(logList.join(set.set.printOptions.join))
 }
 </script>
 

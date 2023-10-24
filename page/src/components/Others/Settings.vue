@@ -21,8 +21,7 @@ const set = UseSettingsStore()
   </select>
   <hr>
   <h3 class="mb-3">其他：</h3>
-  <h5>还原设置</h5>
-  <button @click="set.reset">还原</button>
+  <button type="button" class="btn btn-outline-secondary" @click="set.reset">还原设置</button>
 </template>
 
 <style scoped>

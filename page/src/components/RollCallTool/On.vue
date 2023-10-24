@@ -1,9 +1,11 @@
 <script setup>
 import {useRollCallListStore} from "../../store/useRollCallListStore.js";
+import {UseSettingsStore} from "../../store/useSettingsStore.js";
 
 const props = defineProps(["miniIdToNames"])
 
 const list = useRollCallListStore()
+const set = UseSettingsStore()
 
 function copy(text){
   if (text){
@@ -21,9 +23,11 @@ function out(){
   const data = list.list['allOn']['val'][list.list.now]
   let logList = []
   for (const i in data) {
-    logList.push(props.miniIdToNames[String(Number(data[i]))])
+    let pushValue = props.miniIdToNames[String(Number(data[i]))]
+    if (set.printOptions.before) pushValue = `${Number(i)+1}. `+ pushValue
+    logList.push(pushValue)
   }
-  copy(logList.join("，"))
+  copy(logList.join(set.printOptions.join))
 }
 </script>
 

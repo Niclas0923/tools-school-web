@@ -1,7 +1,10 @@
 <script setup>
 import {computed, onBeforeUnmount, reactive, watch} from "vue";
+import {UseSettingsStore} from "../../store/useSettingsStore.js";
 
 const props = defineProps(["val","inputValue"])
+
+const set = UseSettingsStore()
 
 // 具体显示的时候操作的变量
 const outV = reactive({
@@ -115,19 +118,28 @@ function outNoGet(){
   if (getAndNot.value.get.length>0){
     not = props.val.names.filter((e)=> getAndNot.value.get.indexOf(e) === -1)
   }
-  copy(not.join(","))
+  if (set.printOptions.before) for (let i in not){
+    not[i] = `${Number(i)+1}. `+ not[i]
+  }
+  copy(not.join(set.printOptions.join))
 }
 
 function outCannotRead(){
   let value = []
-  getAndNot.value.not.forEach(e=>{
-    value.push(e.val)
+  getAndNot.value.not.forEach((e,i)=>{
+    let pushValue = e.val
+    if (set.printOptions.before) pushValue = `${Number(i)+1}. `+pushValue
+    value.push(pushValue)
   })
-  copy(value.join(","))
+  copy(value.join(set.printOptions.join))
 }
 
 function outGet(){
-  copy(getAndNot.value.get.join(","))
+  let joinValue = getAndNot.value.get
+  if (set.printOptions.before) for (let i in joinValue) {
+    joinValue[i] = `${Number(i)+1}. `+ joinValue[i]
+  }
+  copy(joinValue.join(set.printOptions.join))
 }
 
 function copy(text){

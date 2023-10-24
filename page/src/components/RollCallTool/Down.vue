@@ -1,10 +1,12 @@
 <script setup>
 import {useRollCallListStore} from "../../store/useRollCallListStore.js";
 import {computed} from "vue";
+import {UseSettingsStore} from "../../store/useSettingsStore.js";
 
 const props = defineProps(["miniIdToNames","miniIds"])
 
 const list = useRollCallListStore()
+const set = UseSettingsStore()
 
 const done = computed(()=>{
   // console.log(list.list["allOn"]["val"])
@@ -26,9 +28,11 @@ function copy(text){
 function out(){
   let logList = []
   for (const i in done.value) {
-    logList.push(props.miniIdToNames[String(Number(done.value[i]))])
+    let pushValue = props.miniIdToNames[String(Number(done.value[i]))]
+    if (set.printOptions.before) pushValue = `${Number(i)+1}. ` +pushValue
+    logList.push(pushValue)
   }
-  copy(logList.join("，"))
+  copy(logList.join(set.printOptions.join))
 }
 
 </script>

@@ -5,6 +5,7 @@ import WeChatRelay from "../components/WeChatRelay.vue";
 import DataShow from "../components/DataShow.vue";
 import Others from "../components/Others.vue";
 import ScreenSize from "../components/Others/ScreenSize.vue";
+import Settings from "../components/Others/Settings.vue";
 
 export default VueRouter.createRouter({
     // 设置使用 hash
@@ -36,9 +37,13 @@ export default VueRouter.createRouter({
         {
             path:"/others",
             component:Others,
-            // 直接跳转到页面尺寸
-            redirect: '/others/screenSize',
+            // 直接跳转到设置尺寸
+            redirect: '/others/settings',
             children:[
+                {
+                    path:"settings",
+                    component:Settings
+                },
                 {
                     path:"screenSize",
                     component:ScreenSize

@@ -144,7 +144,7 @@ function outGet(){
 
 function copy(text){
   if (text){
-    navigator.clipboard.writeText(text)
+    window.navigator.clipboard.writeText(text)
         .then(() => {
           alert("复制成功。")
         })

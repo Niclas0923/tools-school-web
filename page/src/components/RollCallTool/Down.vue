@@ -15,7 +15,7 @@ const done = computed(()=>{
 
 function copy(text){
   if (text){
-    navigator.clipboard.writeText(text)
+    window.navigator.clipboard.writeText(text)
         .then(() => {
           alert("已经导出到剪贴板。")
         })

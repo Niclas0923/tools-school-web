@@ -13,6 +13,16 @@ const done = computed(()=>{
   return props.miniIds.filter(i => list.list["allOn"]["val"][list.list.now].indexOf(i) === -1)
 })
 
+function out(){
+  let logList = []
+  for (const i in done.value) {
+    let pushValue = props.miniIdToNames[String(Number(done.value[i]))]
+    if (set.set.printOptions.before) pushValue = `${Number(i)+1}. ` +pushValue
+    logList.push(pushValue)
+  }
+  copy(logList.join(set.set.printOptions.join))
+}
+
 function copy(text){
   if (text){
     window.navigator.clipboard.writeText(text)
@@ -23,16 +33,6 @@ function copy(text){
           alert("没有剪贴板权限，请授权后重试。")
         });
   }else alert("导出内容为空。")
-}
-
-function out(){
-  let logList = []
-  for (const i in done.value) {
-    let pushValue = props.miniIdToNames[String(Number(done.value[i]))]
-    if (set.set.printOptions.before) pushValue = `${Number(i)+1}. ` +pushValue
-    logList.push(pushValue)
-  }
-  copy(logList.join(set.set.printOptions.join))
 }
 
 </script>

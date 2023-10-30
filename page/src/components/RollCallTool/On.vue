@@ -7,6 +7,17 @@ const props = defineProps(["miniIdToNames"])
 const list = useRollCallListStore()
 const set = UseSettingsStore()
 
+function out(){
+  const data = list.list['allOn']['val'][list.list.now]
+  let logList = []
+  for (const i in data) {
+    let pushValue = props.miniIdToNames[String(Number(data[i]))]
+    if (set.set.printOptions.before) pushValue = `${Number(i)+1}. `+ pushValue
+    logList.push(pushValue)
+  }
+  copy(logList.join(set.set.printOptions.join))
+}
+
 function copy(text){
   if (text){
     window.navigator.clipboard.writeText(text)
@@ -19,16 +30,6 @@ function copy(text){
   }else alert("导出内容为空。")
 }
 
-function out(){
-  const data = list.list['allOn']['val'][list.list.now]
-  let logList = []
-  for (const i in data) {
-    let pushValue = props.miniIdToNames[String(Number(data[i]))]
-    if (set.set.printOptions.before) pushValue = `${Number(i)+1}. `+ pushValue
-    logList.push(pushValue)
-  }
-  copy(logList.join(set.set.printOptions.join))
-}
 </script>
 
 <template>

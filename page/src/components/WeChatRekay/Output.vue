@@ -144,13 +144,20 @@ function outGet(){
 
 function copy(text){
   if (text){
-    window.navigator.clipboard.writeText(text)
-        .then(() => {
-          alert("复制成功。")
-        })
-        .catch(() => {
-          alert("没有剪贴板权限，请授权后重试。")
-        });
+    const input = document.createElement('input');
+    input.value = text
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+    alert("复制成功。")
+    // window.navigator.clipboard.writeText(text)
+    //     .then(() => {
+    //       alert("复制成功。")
+    //     })
+    //     .catch(() => {
+    //       alert("没有剪贴板权限，请授权后重试。")
+    //     });
   }else alert("导出内容为空。")
 }
 
